@@ -9,6 +9,10 @@
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- include the style -->
+    <link rel="stylesheet" href="alertifyjs/css/alertify.min.css" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="alertifyjs/css/themes/default.min.css" />
 
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
@@ -19,12 +23,12 @@
     <div id="head" class="mdc-layout-grid">
         <p>Controles da cabeça</p>
         <div id="head-inclination-controller" class="mdc-layout-grid__inner">
-            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationDown()">
+            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclination('DOWN')">
                 <div class="mdc-button__ripple"></div>
                 <span class="mdc-button__label">Inclinar para Baixo</span>
             </button>
             <div id="head-inclination" class="mdc-layout-grid__cell"></div>
-            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationUp()">
+            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclination('UP')">
                 <div class="mdc-button__ripple"></div>
                 <span class="mdc-button__label">Inclinar para cima</span>
             </button>
@@ -102,6 +106,7 @@
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="alertifyjs/alertify.min.js"></script>
 
     <!-- functions -->
     <script src="js/config.js"></script>
