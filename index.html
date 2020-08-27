@@ -17,44 +17,97 @@
 
 <body>
     <div id="head" class="mdc-layout-grid">
-        <div id="head-inclination-controller" class="mdc-layout-grid__inner"></div>
-        <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationDown()">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Inclinar para Baixo</span>
-        </button>
-        <div id="head-inclination" class="mdc-layout-grid__cell"></div>
-        <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationUp()">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Inclinar para cima</span>
-        </button>
-    </div>
-    <div id="head-rotation-controller" class="mdc-layout-grid">
-        <button class="mdc-button mdc-button--outlined" onclick="headRotationRight()">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Girar para direita</span>
-        </button>
-        <div id="head-rotation"></div>
-        <button class="mdc-button mdc-button--outlined" onclick="headRotationLeft()">
-            <div class="mdc-button__ripple"></div>
-            <span class="mdc-button__label">Girar para esquerda</span>
-        </button>
-    </div>
-    </div>
+        <p>Controles da cabeça</p>
+        <div id="head-inclination-controller" class="mdc-layout-grid__inner">
+            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationDown()">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Inclinar para Baixo</span>
+            </button>
+            <div id="head-inclination" class="mdc-layout-grid__cell"></div>
+            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationUp()">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Inclinar para cima</span>
+            </button>
+        </div>
+        <div id="head-rotation-controller" class="mdc-layout-grid__inner">
+            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headRotationRight()">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Girar para direita</span>
+            </button>
+            <div id="head-rotation" class="mdc-layout-grid__cell"></div>
+            <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headRotationLeft()">
+                <div class="mdc-button__ripple"></div>
+                <span class="mdc-button__label">Girar para esquerda</span>
+            </button>
+        </div>
     </div>
 
-    <div id="arms">
-        <div id="elbow-left"></div>
-        <div id="wrist-left"></div>
-        <div id="elbow-right"></div>
-        <div id="wrist-right"></div>
+    <div id="arms" class="mdc-layout-grid">
+        <p>Controles dos braços</p>
+        <div id="arm-left">
+            <p>Braço esquerdo</p>
+            <div class="mdc-layout-grid__inner">
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="elbowRest('left')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Relaxar o braço</span>
+                </button>
+                <div id="elbow-left" class="mdc-layout-grid__cell"></div>
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell"
+                    onclick="elbowContraction('left')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Contrair o braço</span>
+                </button>
+            </div>
+            <div class="mdc-layout-grid__inner">
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="wristRight('left')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Girar para direita</span>
+                </button>
+                <div id="wrist-left" class="mdc-layout-grid__cell"></div>
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="wristLeft('left')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Girar para esquerda</span>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div id="arm-right">
+            <p>Braço direito</p>
+            <div class="mdc-layout-grid__inner">
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="elbowRest('right')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Relaxar o braço</span>
+                </button>
+                <div id="elbow-right" class="mdc-layout-grid__cell"></div>
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell"
+                    onclick="elbowContraction('right')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Contrair o braço</span>
+                </button>
+            </div>
+            <div class="mdc-layout-grid__inner">
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="wristRight('right')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Girar para direita</span>
+                </button>
+                <div id="wrist-right" class="mdc-layout-grid__cell"></div>
+                <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="wristLeft('right')">
+                    <div class="mdc-button__ripple"></div>
+                    <span class="mdc-button__label">Girar para esquerda</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <!-- pages -->
+    <!-- functions -->
     <script src="js/config.js"></script>
     <script src="js/status.js"></script>
     <script src="js/headController.js"></script>
+    <script src="js/armsController.js"></script>
 
 </body>
 
