@@ -11,3 +11,17 @@ function headInclinationDown(){
         reload()
     })
 }
+
+function headRotationLeft(){
+    APIROBO.put("/api/head/rotation/1").then(function (response) {
+        console.log(response)
+        reload()
+    })
+}
+
+function headRotationRight(){
+    APIROBO.put("/api/head/rotation/-1").then(function (response) {
+        console.log(response)
+        reload()
+    })
+}

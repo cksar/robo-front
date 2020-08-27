@@ -14,11 +14,34 @@
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <title>Robo | Front</title>
 </head>
+
 <body>
-    <div id="head">
-        <div id="head-inclination"></div>
-        <div id="head-rotation"></div>
+    <div id="head" class="mdc-layout-grid">
+        <div id="head-inclination-controller" class="mdc-layout-grid__inner"></div>
+        <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationDown()">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Inclinar para Baixo</span>
+        </button>
+        <div id="head-inclination" class="mdc-layout-grid__cell"></div>
+        <button class="mdc-button mdc-button--outlined mdc-layout-grid__cell" onclick="headInclinationUp()">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Inclinar para cima</span>
+        </button>
     </div>
+    <div id="head-rotation-controller" class="mdc-layout-grid">
+        <button class="mdc-button mdc-button--outlined" onclick="headRotationRight()">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Girar para direita</span>
+        </button>
+        <div id="head-rotation"></div>
+        <button class="mdc-button mdc-button--outlined" onclick="headRotationLeft()">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Girar para esquerda</span>
+        </button>
+    </div>
+    </div>
+    </div>
+
     <div id="arms">
         <div id="elbow-left"></div>
         <div id="wrist-left"></div>
@@ -26,21 +49,13 @@
         <div id="wrist-right"></div>
     </div>
 
-    <button class="mdc-button mdc-button--outlined" onclick="headInclinationDown()">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Inclinar para Baixo</span>
-    </button>
-    <button class="mdc-button mdc-button--outlined" onclick="headInclinationUp()">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Inclinar para cima</span>
-    </button>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <!-- pages -->
     <script src="js/config.js"></script>
     <script src="js/status.js"></script>
-    <script src="js/headInclination.js"></script>
+    <script src="js/headController.js"></script>
 
 </body>
+
 </html>
