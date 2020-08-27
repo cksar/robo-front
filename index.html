@@ -6,16 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.0/build/css/alertify.min.css" />
-    <!-- Default theme -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.0/build/css/themes/default.min.css" />
-    <link rel="stylesheet" href="style/style.css" />
 
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
     <title>Robo | Front</title>
 </head>
 <body>
+    <button onclick="showStatus()">Mostrar</button>
     
+    <div id="head">
+        <div id="head-inclination"></div>
+        <div id="head-rotation"></div>
+    </div>
+    <div id="arms">
+        <div id="elbow-left"></div>
+        <div id="wrist-left"></div>
+        <div id="elbow-right"></div>
+        <div id="wrist-right"></div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- pages -->
+    <script src="js/config.js"></script>
+    <script src="js/status.js"></script>
+
 </body>
 </html>
