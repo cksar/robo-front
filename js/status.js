@@ -1,6 +1,9 @@
+showStatus()
+
 function showStatus(){
     APIROBO.get("/api/head/inclination").then(function (response) {
         let headInclination = document.getElementById('head-inclination')
+        console.log(response)
         headInclination.innerHTML = "<p>"+response.data+"</p>"
     })
     APIROBO.get("/api/head/rotation").then(function (response) {
@@ -23,4 +26,8 @@ function showStatus(){
         let wristRight = document.getElementById('wrist-right')
         wristRight.innerHTML = "<p>"+response.data+"</p>"
     })
+}
+
+function reload() {
+    showStatus()
 }
