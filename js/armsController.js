@@ -54,7 +54,7 @@ function wristRight(direction) {
     APIROBO.put("/api/arms/wrist/" + direction + "/-1")
         .then(function (response) {
             if (document.getElementById('elbow-' + direction).innerText == "Fortemente Contraído") {
-                if (formatNumber(response.data)== document.getElementById('wrist-' + direction).innerText) {
+                if (formatNumber(response.data) == document.getElementById('wrist-' + direction).innerText) {
                     alertify.warning('Impossível rotacionar mais!!!')
                 } else {
                     reload()

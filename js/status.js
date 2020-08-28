@@ -59,7 +59,11 @@ function formatContraction(value) {
 }
 
 function formatNumber(value) {
-    return "Rotação para " + value + "º"
+    if (value == 0) {
+        return "Em Repouso"
+    } else {
+        return "Rotação para " + value + "º"
+    }
 }
 
 function reload() {
