@@ -1,7 +1,7 @@
 function headInclination(position) {
     APIROBO.put("/api/head/inclination/" + position)
         .then(function (response) {
-            if (response.data == document.getElementById('head-inclination').innerText) {
+            if (formatInclination(response.data) == document.getElementById('head-inclination').innerText) {
                 alertify.warning('Impossível inclinar mais!!!')
             } else {
                 reload()
@@ -17,8 +17,8 @@ function headInclination(position) {
 function headRotationLeft() {
     APIROBO.put("/api/head/rotation/1")
         .then(function (response) {
-            if (document.getElementById('head-inclination').innerText != "DOWN") {
-                if (response.data == document.getElementById('head-rotation').innerText) {
+            if (document.getElementById('head-inclination').innerText != "Para Baixo") {
+                if (formatNumber(response.data) == document.getElementById('head-rotation').innerText) {
                     alertify.warning('Impossível rotacionar mais!!!')
                 } else {
                     reload()
@@ -37,8 +37,8 @@ function headRotationLeft() {
 function headRotationRight() {
     APIROBO.put("/api/head/rotation/-1")
         .then(function (response) {
-            if (document.getElementById('head-inclination').innerText != "DOWN") {
-                if (response.data == document.getElementById('head-rotation').innerText) {
+            if (document.getElementById('head-inclination').innerText != "Para Baixo") {
+                if (formatNumber(response.data) == document.getElementById('head-rotation').innerText) {
                     alertify.warning('Impossível rotacionar mais!!!')
                 } else {
                     reload()
